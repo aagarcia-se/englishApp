@@ -1,0 +1,119 @@
+.memory-game {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.return-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  background-color: #4ecdc4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-title {
+  margin-top: 40px;
+  color: #ff6b6b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.card {
+  height: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background-color: #ff6b6b;
+}
+
+.card-back {
+  background-color: #4ecdc4;
+  transform: rotateY(180deg);
+}
+
+.back {
+  font-size: 2rem;
+  color: white;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.win-message {
+  background-color: #a5dff9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #ff8e8e;
+  transform: scale(1.05);
+}
